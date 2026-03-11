@@ -21,3 +21,4 @@ if __name__ == "__main__":
     visited = set()
     current = "A"
     DFS(graph, current, visited)
+    print("DFS DONE")
