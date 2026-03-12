@@ -1,24 +1,15 @@
-
-
-
-def DFS(graph, current, visited):
-    print(current)
-    for newHead in graph[current]:
-        if newHead not in visited:
-            visited.add(newHead)
-            DFS(graph, newHead, visited)
-    return "Done"
+def DFS(graph, current):
+    for header in graph[current]:
+        print(header)
+        DFS(graph, header)
 
 if __name__ == "__main__":
     graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
-    visited = set()
-    current = "A"
-    DFS(graph, current, visited)
-    print("DFS DONE")
+        "A": ["B", "C"],
+        "B": ["D", "E"],
+        "C": ["F"],
+        "D": [],
+        "E": ["F"],
+        "F": []
+    }
+    DFS(graph, "A")
