@@ -1,21 +1,30 @@
-import xd
-def binary_search(arr, target):
-    arr = xd.sort(arr)
-    left, right = 0, len(arr)-1
-    while left <= right:
-        mid = (left+right)//2
-        if arr[mid] == target:
-            return mid
-        elif arr[mid] > target:
-            right = mid -1
-        else:
-            left = mid + 1
+import binary_search
+import DFS
+import n_queens
+import sort
+
+tools = {1:"Binary Search",
+         2:"Depth First Search",
+         3:"N Queens",
+         4:"Sorter"}
 
 if __name__ == "__main__":
-    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    target = 5
-    result = binary_search(arr, target)
-    if result is not None:
-        print(f"Element found at index: {result}")
+    print("--Welcome to Multi-Tool v0.1--")
+    print("------------------------------")
+    print("What tool do you want to use?")
+    for key in tools:
+        print(f"Type {key} for {tools[key]}")
+    print("------------------------------")
+    decision = input("")
+    print("------------------------------")
+    if decision == "1":
+        binary_search.binary_search()
+    elif decision == "2":
+        DFS.DFS()
+    elif decision == "3":
+        n_queens.n_queens()
+    elif decision == "4":
+        sort.sort()
     else:
-        print("Element not found in the array.")
+        print("Error!")
+    
