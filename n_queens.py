@@ -30,14 +30,20 @@ def is_valid(r, c, cols, diags1, diags2):
     return True
 
 
-if __name__ == "__main__":
+def main():
+    print("N Queens")
+    print("------------------------------")
     n = int(input("Enter value of n: "))
     startTime = time.time()
 
     ans = n_queens(n)
     endTime = time.time()
+    print("------------------------------")
     print(f"Found {len(ans)} answers")
+    print("------------------------------")
     print("All found Solutions:")
     for entry in ans:
         print(entry)
+    print("------------------------------")
     print(f"Search took {endTime - startTime}")
+    print("------------------------------")

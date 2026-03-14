@@ -22,7 +22,7 @@ if __name__ == "__main__":
     elif decision == "2":
         DFS.DFS()
     elif decision == "3":
-        n_queens.n_queens()
+        n_queens.main()
     elif decision == "4":
         sort.sort()
     else:
