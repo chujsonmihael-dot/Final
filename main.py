@@ -1,7 +1,7 @@
 import binary_search
 import DFS
 import n_queens
-import sort
+import array_funcs
 
 tools = {1:"Binary Search",
          2:"Depth First Search",
@@ -16,7 +16,7 @@ if __name__ == "__main__":
         print(f"Type {key} for {tools[key]}")
     print("------------------------------")
     decision = input("")
-    print("------------------------------")
+    
     if decision == "1":
         binary_search.binary_search()
     elif decision == "2":
@@ -24,7 +24,9 @@ if __name__ == "__main__":
     elif decision == "3":
         n_queens.main()
     elif decision == "4":
-        sort.sort()
+        
+        print(f"Sorted Array: {array_funcs.sort(array_funcs.enter_array())}")
+        print("------------------------------")
     else:
         print("Error!")
     

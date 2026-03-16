@@ -1,25 +1,13 @@
-import sort
+import array_funcs
 import time
 def binary_search():
     print("Binary Search")
     print("------------------------------")
-    print("Enter the array")
-    arr = []
-    while True:
-        print(f"Current array is {arr}")
-        print("Type the next value")
-        print("Type Done to end the array")
-        print("------------------------------")
-        val = input("")
-        if val == "Done":
-            break
-        elif val.isdigit():
-            arr.append(int(val))
-    print("------------------------------")
+    arr = array_funcs.enter_array()
     target = int(input("Type the target value: "))
     print("------------------------------")
     startTime = time.time()
-    arr = sort.sort(arr)
+    arr = array_funcs.sort(arr)
     left, right = 0, len(arr)-1
     while left <= right:
         mid = (left+right)//2
