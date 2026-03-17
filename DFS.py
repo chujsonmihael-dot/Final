@@ -1,8 +1,14 @@
-def DFS(graph, current):
+def backtrack(graph, current):
     for header in graph[current]:
         print(header)
-        DFS(graph, header)
-
+        if header in graph:
+            backtrack(graph, header)
+def DFS(graph, current):
+    print("Depth First Search")
+    print("------------------------------")
+    print(current)
+    backtrack(graph, current)
+    print("------------------------------")
 if __name__ == "__main__":
     graph = {
         "A": ["B", "C"],

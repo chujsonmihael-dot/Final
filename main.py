@@ -2,6 +2,7 @@ import binary_search
 import DFS
 import n_queens
 import array_funcs
+import utils
 
 tools = {1:"Binary Search",
          2:"Depth First Search",
@@ -16,11 +17,12 @@ if __name__ == "__main__":
         print(f"Type {key} for {tools[key]}")
     print("------------------------------")
     decision = input("")
-    
+    print("------------------------------")
     if decision == "1":
         binary_search.binary_search()
     elif decision == "2":
-        DFS.DFS()
+        args = utils.graph_maker()
+        DFS.DFS(args[0], args[1])
     elif decision == "3":
         n_queens.main()
     elif decision == "4":
