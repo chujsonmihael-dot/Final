@@ -3,11 +3,13 @@ import DFS
 import n_queens
 import array_funcs
 import utils
+import fibonacci_numbers
 
 tools = {1:"Binary Search",
          2:"Depth First Search",
          3:"N Queens",
-         4:"Sorter"}
+         4:"Sorter",
+         5:"Fibonacci Number"}
 
 if __name__ == "__main__":
     print("--Welcome to Multi-Tool v0.1--")
@@ -29,6 +31,8 @@ if __name__ == "__main__":
         
         print(f"Sorted Array: {array_funcs.sort(array_funcs.enter_array())}")
         print("------------------------------")
+    elif decision == "5":
+        fibonacci_numbers.fib_n()
     else:
         print("Error!")
     
