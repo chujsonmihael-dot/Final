@@ -1,10 +1,8 @@
-import binary_search
-import DFS
-import n_queens
-import array_funcs
-import utils
-import fibonacci_numbers
-import Encrypter
+from programs import binary_search, DFS, Encrypter, fibonacci_numbers, n_queens
+
+from complementary import utils, array_funcs
+
+import tkinter as tk
 
 tools = {1:"Binary Search",
          2:"Depth First Search",
@@ -12,7 +10,7 @@ tools = {1:"Binary Search",
          4:"Sorter",
          5:"Fibonacci Number",
          6:"Encrypter"}
-def MuliToolMain():
+def MuliToolMainConsole():
     print("--Welcome to Multi-Tool v0.1--")
     print("------------------------------")
     while True:
@@ -41,8 +39,15 @@ def MuliToolMain():
             print("Error!")
             print("------------------------------")
 
+def MultiToolMainWindow():
+    root = tk.TK()
+    root.title("Multi-Tool v0.1")
+
+    root.mainloop()
+
 if __name__ == "__main__":
-    MuliToolMain()
+    MuliToolMainConsole()
+    MultiToolMainWindow()
     
     
     

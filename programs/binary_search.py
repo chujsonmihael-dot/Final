@@ -1,4 +1,4 @@
-import array_funcs
+from complementary import array_funcs
 import time
 def binary_search():
     print("Binary Search")
