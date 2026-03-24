@@ -51,6 +51,16 @@ def MultiToolMainWindow():
     MainTitle1.place(relx=0.5,rely=0.05,anchor="center")
     MainTitle2.place(relx=0.5, rely=0.175, anchor="center")
 
+    def ButtonClick(key):
+        print("xd")
+
+    #ADDNS BUTTONS
+    posy = 0.3
+    posx = 0.025
+    for key in tools:
+        NewButtonText = tk.Button(display, text=tools[key], font=("Sans-Serif", 14), command=lambda k = key: ButtonClick(key))
+        NewButtonText.place(anchor="w", relx=posx,rely=posy )
+        posy+=0.125
 
     display.mainloop()
 
