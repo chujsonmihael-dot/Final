@@ -2,8 +2,7 @@ from programs import binary_search, DFS, Encrypter, fibonacci_numbers, n_queens
 
 from complementary import utils, array_funcs
 
-
-
+import display.display as display
 tools = {1:"Binary Search",
          2:"Depth First Search",
          3:"N Queens",
@@ -39,7 +38,9 @@ def MuliToolMainConsole():
             print("Error!")
             print("------------------------------")
 
-
+if __name__ == "__main__":
+    #MuliToolMainConsole()
+    display.MultiToolMainWindow()
     
     
     
