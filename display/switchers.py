@@ -32,27 +32,27 @@ def SwitchToMainMenu(display):
 
 def SwitchToBinarySearch(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 def SwitchToDFS(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 def SwitchToNQueens(display):
     ClearDisplay(display)    
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 def SwitchToSorter(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 def SwitchToFibonacciNumber(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 def SwitchToEncrypter(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center")
+    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
 
 
 keyToFunction = {
