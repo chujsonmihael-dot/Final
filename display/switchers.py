@@ -1,6 +1,9 @@
 import tkinter as tk
 from display.display import ClearDisplay
 from display.display import tools
+from complementary import array_funcs
+
+import programs.binary_search as binary_search
 
 def init(widgets):
     globals().update(widgets)
@@ -30,9 +33,20 @@ def SwitchToMainMenu(display):
         buttons.append(NewButton)
         posy+=0.125
 
+
+
 def SwitchToBinarySearch(display):
+    def on_array_enter(array):
+        ClearDisplay(display)
+        BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+        
+
+        binary_search.binary_search_gui(globals(), array)
+
     ClearDisplay(display)
     BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    array_funcs.enter_array_gui(globals(), on_array_enter)
+    
 
 def SwitchToDFS(display):
     ClearDisplay(display)
