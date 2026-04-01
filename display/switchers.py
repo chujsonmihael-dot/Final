@@ -1,12 +1,17 @@
 import tkinter as tk
 from display.display import ClearDisplay
 from display.display import tools
-from complementary import array_funcs
+from complementary import array_funcs, utils
 
 import programs.binary_search as binary_search
+import programs.DFS as DFS
+
+# module-level storage for widgets instead of injecting into globals()
+_widgets = None
 
 def init(widgets):
-    globals().update(widgets)
+    global _widgets
+    _widgets = widgets
 
 def SwitchToMainMenu(display):
     global MainTitle1, MainTitle2
@@ -38,35 +43,42 @@ def SwitchToMainMenu(display):
 def SwitchToBinarySearch(display):
     def on_array_enter(array):
         ClearDisplay(display)
-        BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
-        
-
-        binary_search.binary_search_gui(globals(), array)
+        _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
+        binary_search.binary_search_gui(_widgets, array)
 
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
-    array_funcs.enter_array_gui(globals(), on_array_enter)
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
+
+    array_funcs.enter_array_gui(_widgets, on_array_enter)
     
 
 def SwitchToDFS(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    def on_enter(result):
+        _widgets["DFSResultText"].place(relx=0.5, rely=0.4, anchor="center")
+        _widgets["DFSResult"].place(relx=0.5, rely=0.5, anchor="center")
+        _widgets["DFSResult"].config(text=f"{result}")
+        _widgets["DFSGraphEntry"].place_forget()
+        
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
+    utils.graph_maker_gui(_widgets, lambda graph, head: DFS.DFS_gui(graph, head, on_enter))
+    
 
 def SwitchToNQueens(display):
-    ClearDisplay(display)    
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    ClearDisplay(display)
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
 
 def SwitchToSorter(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
 
 def SwitchToFibonacciNumber(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
 
 def SwitchToEncrypter(display):
     ClearDisplay(display)
-    BackToMenuButton.place(relx=0.5, rely=0.9, anchor="center") # pyright: ignore[reportUndefinedVariable]
+    _widgets["BackToMenuButton"].place(relx=0.5, rely=0.9, anchor="center")
 
 
 keyToFunction = {

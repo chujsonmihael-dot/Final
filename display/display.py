@@ -39,6 +39,12 @@ def DefineWidgets(display):
     Widgets["IntegerEntry"] = tk.Entry(display, font=("Sans-Serif", 14))
     Widgets["IntegerEntryText"] = tk.Label(display, text="Type the target value", font=("Sans-Serif", 14))
 
+    Widgets["DFSGraphEntry"] = tk.Entry(display, font=("Sans-Serif", 14))
+    Widgets["DFSGraphEntryText"] = tk.Label(display, text="Type the graph in the form of <parent:child,child;parent:child>", font=("Sans-Serif", 14))
+
+    Widgets["DFSResultText"] = tk.Label(display, text="Your DFS Result:", font=("Sans-Serif", 14))
+    Widgets["DFSResult"] = tk.Label(display, text="", font=("Sans-Serif", 14))
+
     Widgets["BinarySearchResult"] = tk.Label(display, text="", font=("Sans-Serif", 14))
 
     return Widgets
